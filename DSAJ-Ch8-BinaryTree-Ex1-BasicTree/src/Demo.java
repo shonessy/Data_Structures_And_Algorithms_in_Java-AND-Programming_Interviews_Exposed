@@ -23,6 +23,14 @@ public class Demo {
 		tree.traverseInOrder();
 		System.out.println();
 		
+		System.out.println("Traverse Pre Order: ");
+		tree.traversePreOrder();
+		System.out.println();
+		
+		System.out.println("Traverse Post Order: ");
+		tree.traversePostOrder();
+		System.out.println();
+		
 		System.out.println("Minimum: " + tree.findMin());
 		System.out.println();
 		

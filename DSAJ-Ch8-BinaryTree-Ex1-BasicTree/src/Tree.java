@@ -138,6 +138,30 @@ public class Tree {
 		traverseInOrder(localRoot.rightChild);
 	}
 	
+	public void traversePreOrder() {
+		this.traversePreOrder(root);
+	}
+	
+	private void traversePreOrder(Node localRoot) {
+		if(localRoot == null)
+			return;
+		System.out.println(localRoot.getData());
+		traversePreOrder(localRoot.leftChild);
+		traversePreOrder(localRoot.rightChild);
+	}
+	
+	public void traversePostOrder() {
+		this.traversePostOrder(root);
+	}
+	
+	private void traversePostOrder(Node localRoot) {
+		if(localRoot == null)
+			return;
+		traversePostOrder(localRoot.leftChild);
+		traversePostOrder(localRoot.rightChild);
+		System.out.println(localRoot.getData());
+	}
+	
 	public boolean isEmpty() {
 		return this.root == null;
 	}
