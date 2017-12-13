@@ -10,6 +10,7 @@ public class MyStack {
 		return this.top == null;
 	}
 	
+	
 	public void push(int x) {
 		Node newTop = new Node(x);
 		newTop.previous = this.top;
@@ -31,7 +32,6 @@ public class MyStack {
 	}
 	
 	public void displayStack() {
-		System.out.print("Stack vrh->dno: \t");
 		if(isEmpty()) {
 			System.out.println("");
 			return;

@@ -1,19 +1,31 @@
 
 public class MyStack {
 	private Node top;
+	private Node bottom;
+	private int stackMaxSize;
+	private int stackSize;
 	
-	public MyStack() {
+	public MyStack(int stackMaxSize) {
+		this.stackMaxSize = stackMaxSize;
 		this.top = null;
+		this.bottom = null;
 	}
 	
 	public boolean isEmpty() {
 		return this.top == null;
 	}
 	
+	public boolean isFull() {
+		return stackSize == stackMaxSize;
+	}
+	
 	public void push(int x) {
 		Node newTop = new Node(x);
+		if(isEmpty())
+			this.bottom = newTop;
 		newTop.previous = this.top;
 		this.top = newTop;
+		this.stackSize++;
 	}
 	
 	public int pop() {
@@ -23,6 +35,9 @@ public class MyStack {
 		}		
 		int ret = this.top.data;
 		this.top = this.top.previous;
+		this.stackSize--;
+		if(isEmpty())
+			this.bottom = null;
 		return ret;
 	}
 	
